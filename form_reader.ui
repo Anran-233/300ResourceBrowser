@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form_reader</class>
+ <widget class="QWidget" name="Form_reader">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QPlainTextEdit" name="text">
+     <property name="styleSheet">
+      <string notr="true">font: 12px &quot;新宋体&quot;;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string>[Main]
+Mode=WaitAllDead
+Model=..\Data\Magic\Skill\118_hei\s06_bai\keep\tx_118_s06_5_01.x
+Num=4
+Delay=0
+Radius=0
+
+[Instance]
+NewSound=event:/hero_new/118/skill/r_impact1
+Mode=WaitAllDead
+Loop=1
+Scale=1.0f
+DeadRenderTime=300
+Bind=head
+Action=follow
+ActionTime=0
+TrackType=Line
+ParaHeight=0.0f
+
+[Instance1]
+Model=..\Data\Magic\Skill\118_hei\s06_bai\keep\tx_118_s06_5_02.x
+Mode=WaitAllDead
+Loop=1
+Scale=0.7f
+DeadRenderTime=300
+Bind=foot
+Action=follow
+ActionTime=0
+TrackType=Line
+ParaHeight=0.0f
+
+[Instance2]
+Model=..\Data\Magic\Skill\118_hei\s06_bai\keep\tx_118_s06_5_03.x
+Mode=WaitAllDead
+Loop=1
+Scale=1.0f
+DeadRenderTime=300
+Bind=foot
+Action=follow
+ActionTime=0
+TrackType=Line
+ParaHeight=0.0f
+
+[Instance3]
+Model=..\Data\Magic\Skill\118_hei\s06_bai\keep\tx_118_s06_5_04.x
+Mode=WaitAllDead
+Loop=1
+Scale=1.5f
+DeadRenderTime=300
+Bind=foot
+Action=follow
+ActionTime=0
+TrackType=Line
+ParaHeight=0.0f</string>
+     </property>
+     <property name="tabStopWidth">
+      <number>25</number>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
