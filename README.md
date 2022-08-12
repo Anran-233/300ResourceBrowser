@@ -35,6 +35,11 @@
 
 # 其他功能
 
+### 快捷复制
+- 双击选中项，可以快速复制选中项的补丁路径。
+
+![image](https://user-images.githubusercontent.com/111073265/184276499-764b145d-410e-495e-b8ec-7210a06653a6.png)
+
 ### 略缩图预览器
 - 选中图片文件(.bmp.png.jpg.dds.tga)时，会在右下角(默认)生成一个略缩图预览器。
 - 预览器可以随意在软件内部拖动，双击或者单击右上角【×】键隐藏，点击其他图片文件时会再次出现，彻底关闭需要在【设置】里调整。
@@ -59,4 +64,9 @@
   - 本地存在的资源文件，会显示【文件路径】【补丁路径】【文件大小】；
   - 网络资源文件，仅显示【补丁路径】；
 - 【文件路径】的【…】可以快速跳转到文件所在目录，【C】(copypath)则是复制文件路径。
-- 【补丁路径】的【F】(filename)是复制文件名，【C】(copypath)是复制补丁路径。
+- 【补丁路径】的【F】(filename)是复制文件名，【C】(copypath)是复制补丁路径。+
+
+![image](https://user-images.githubusercontent.com/111073265/184276026-5816e769-509b-4fe1-9ddb-2d94759e185d.png)
+![image](https://user-images.githubusercontent.com/111073265/184276115-1f4f827e-6ccb-40e2-a96e-e1bd64d4439b.png)
+![image](https://user-images.githubusercontent.com/111073265/184276174-2d25bcb8-5c7c-4767-b945-6905b395f81f.png)
+
