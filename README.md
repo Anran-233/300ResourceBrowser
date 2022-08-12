@@ -70,3 +70,22 @@
 ![image](https://user-images.githubusercontent.com/111073265/184276115-1f4f827e-6ccb-40e2-a96e-e1bd64d4439b.png)
 ![image](https://user-images.githubusercontent.com/111073265/184276174-2d25bcb8-5c7c-4767-b945-6905b395f81f.png)
 
+# 代码开发环境配置
+
+### 开源代码获取方式：
+- [git项目页面](https://github.com/Anran-233/300ResourceBrowser.git)直接打包获取
+- 软件右上角logo部分鼠标右键单击即可获取开源代码
+
+### 开发环境
+- Windows系统(因为用到了大量Windows API)
+- QT 5.14.2
+- MSVC 2017 32bit static
+- C++ 11
+
+# 项目依赖
+- 因为QT自身图片库，没有对dds和tga的支持，于是引入了[r-lyeh](https://github.com/r-lyeh)的开源库[spot](https://github.com/r-lyeh-archived/spot.git)。
+- 引入的部分为文件[img_decode.h](img_decode.h)，因为本项目中只需要用到tga和dds的解码部分，所以我对spot库源码进行了提炼，只保留了这一部分功能，并且对此进行了类封装以对接项目的使用。
+- spot库的[许可证](https://github.com/r-lyeh-archived/spot/blob/171c208314d413330973cfefe5d14b7908621f42/LICENSE)。
+
+# 许可证声明
+#### 本项目完全开源，不设任何限制
