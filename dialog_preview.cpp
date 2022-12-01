@@ -87,11 +87,11 @@ void Dialog_Preview::setImageMax(SDataInfo sDataInfo, QString strDataPath)
     QPixmap pixImage;
     if (strImageType.contains("dds", Qt::CaseInsensitive)) {
         CImgDecede imgDecede(img_data, img_data.size(), CImgDecede::DDS);
-        pixImage = QPixmap::fromImage(QImage(imgDecede.data(), imgDecede.w(), imgDecede.h(), QImage::Format_ARGB32));
+        pixImage = QPixmap::fromImage(QImage(imgDecede.data(), imgDecede.w(), imgDecede.h(), QImage::Format_RGBA8888));
     }
     else if (strImageType.contains("tga", Qt::CaseInsensitive)) {
         CImgDecede imgDecede(img_data, img_data.size(), CImgDecede::TGA);
-        pixImage = QPixmap::fromImage(QImage(imgDecede.data(), imgDecede.w(), imgDecede.h(), QImage::Format_ARGB32));
+        pixImage = QPixmap::fromImage(QImage(imgDecede.data(), imgDecede.w(), imgDecede.h(), QImage::Format_RGBA8888));
     }
     else pixImage.loadFromData(img_data);
 

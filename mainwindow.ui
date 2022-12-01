@@ -444,7 +444,7 @@
           <string notr="true">border: 1px solid #bbb;</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16px; color:#2a2a2a;&quot;&gt;《300英雄》&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:24px; color:#2a2a2a;&quot;&gt;资源浏览器&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:13px; color:#3f3f3f;&quot;&gt;简易版 v0.4(1)&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10px; color:#4f4f4f;&quot;&gt;@Anran233&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16px; color:#2a2a2a;&quot;&gt;《300英雄》&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:24px; color:#2a2a2a;&quot;&gt;资源浏览器&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:13px; color:#3f3f3f;&quot;&gt;简易版 v0.4(2)&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10px; color:#4f4f4f;&quot;&gt;@Anran233&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -687,6 +687,8 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【删改】优化了导出速度，由原本的复制操作改为了直接移动操作，减少硬盘读写量&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】图片略缩图重新启用了【直读模式】（原本因为速度问题被废弃，现解码速度问题已优化），选中图片项后会直接在前台读取图片，而非后台缓存&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】右键菜单新添加了【预览文本】，文本文件可以直接预览内容（只读，现支持txt、ini、lua、xml、json、fx、psh、string）&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【v0.4(1)】修复了略缩图读取部分dds闪退问题&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【v0.4(2)】修复了部分dds预览全图不显示和闪退问题&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#666666;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#666666;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24px; color:#333333;&quot;&gt;版本 v0.3  更新内容&lt;/span&gt;&lt;/p&gt;
