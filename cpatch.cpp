@@ -774,7 +774,7 @@ int CPatch::UncompTYGzFile(QString strGzFilePath, QString strNewFilePath)
             // 无压缩文件
             ofstream outFile;
             outFile.open(strNewFilePath.toStdWString(), ios::binary);
-            outFile.write((char *)pcCompData, nFileLen);
+            outFile.write((char *)pcCompData, nCompLen);
             outFile.close();
         }
         delete[] pcCompData;
