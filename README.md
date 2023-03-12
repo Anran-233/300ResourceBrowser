@@ -1,5 +1,5 @@
 # 300ResourceBrowser
-300英雄游戏资源文件浏览器 - 简易版本  [【下载地址】](https://github.com/Anran-233/300ResourceBrowser/releases)
+300英雄游戏资源文件浏览器 - 简易版本  [【下载地址】](../../releases)
 
 ![image](https://user-images.githubusercontent.com/111073265/184269582-218639e9-a187-4ad6-9560-533bd27ad3fc.png)
 
@@ -73,7 +73,7 @@
 # 代码开发环境配置
 
 ### 开源代码获取方式：
-- [git项目页面](https://github.com/Anran-233/300ResourceBrowser.git)直接打包获取
+- [git项目页面](../../../300ResourceBrowser.git)直接打包获取
 - 软件右上角logo部分鼠标右键单击即可获取开源代码
 
 ### 开发环境
