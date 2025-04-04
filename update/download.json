@@ -5,8 +5,8 @@
 	"compLen": 7426048,
 	"compMd5": "1e663edf93d2e0e219b611c7c8b0de1d",
 	"url": [
-		"http://gitee.com/anran_233/300ResourceBrowser/raw/main/update/300ResourceBrowser_v0.5",
-		"http://github.com/Anran-233/300ResourceBrowser/raw/main/update/300ResourceBrowser_v0.5",
-		"http://Anran233.com/app/300hero/300ResourceBrowser/update/300ResourceBrowser_v0.5"
+		"http://gitee.com/anran_233/300ResourceBrowser/releases/download/v0.5/300ResourceBrowser-v0.5.exe.gz",
+		"https://github.com/Anran-233/300ResourceBrowser/releases/download/v0.5/300ResourceBrowser-v0.5.exe.gz",
+		"http://Anran233.com/app/300hero/300ResourceBrowser/update/300ResourceBrowser-v0.5.exe.gz"
 	]
 }
