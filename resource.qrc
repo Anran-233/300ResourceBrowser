@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/resource">
+        <file alias="qt_zh_CN.qm">resource/qt_zh_CN.qm</file>
+        <file alias="readBank.dll.gz">resource/readBank.dll.gz</file>
+        <file alias="fmod.dll.gz">resource/fmod.dll.gz</file>
+        <file alias="update.exe.gz">resource/update.exe.gz</file>
+        <file alias="help.html.gz">resource/help.html.gz</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>ico_exe.ico</file>
+        <file>ico_jmp.ico</file>
+        <file>ico_bank.ico</file>
+        <file>ico_dat.ico</file>
+        <file>loading.gif</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>qtbase_zh_CN.qm</file>
+    </qresource>
+</RCC>

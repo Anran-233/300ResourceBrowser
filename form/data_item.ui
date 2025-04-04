@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Data_item</class>
+ <widget class="QWidget" name="Data_item">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>469</width>
+    <height>296</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>200</width>
+    <height>80</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{font: 12px &quot;微软雅黑&quot;;}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
+   <property name="spacing">
+    <number>2</number>
+   </property>
+   <property name="leftMargin">
+    <number>1</number>
+   </property>
+   <property name="topMargin">
+    <number>1</number>
+   </property>
+   <property name="rightMargin">
+    <number>1</number>
+   </property>
+   <property name="bottomMargin">
+    <number>1</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>2</number>
+     </property>
+     <property name="leftMargin">
+      <number>4</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_name">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size:24px;</string>
+       </property>
+       <property name="text">
+        <string>列表名称</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_interval">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_info1">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: #555;
+font-size:12px;</string>
+         </property>
+         <property name="text">
+          <string>( 网络模式 )</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_info2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: #555;
+font-size:12px;</string>
+         </property>
+         <property name="text">
+          <string>( 888888项 )</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_download">
+       <property name="minimumSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>下载全部缺失资源</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: 1px solid #ADADAD;
+	background-color: #E1E2E2;
+	color: #444;
+	font-size:12px;
+}
+QPushButton:hover {
+	border: 1px solid #0078D7;
+	background-color: #E5F1FB;
+	color: #024;
+}
+QPushButton:pressed {
+	border: 1px solid #00559B;
+	background-color: #CCE4F7;
+	color: #024;
+}
+QPushButton:!enabled {
+	border: 1px solid #BFBFBF;
+	background-color: #CCCCCC;
+	color: #888888;
+}</string>
+       </property>
+       <property name="text">
+        <string>下载</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_proofread">
+       <property name="minimumSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>校对当前缺失资源</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: 1px solid #ADADAD;
+	background-color: #E1E2E2;
+	color: #444;
+	font-size:12px;
+}
+QPushButton:hover {
+	border: 1px solid #0078D7;
+	background-color: #E5F1FB;
+	color: #024;
+}
+QPushButton:pressed {
+	border: 1px solid #00559B;
+	background-color: #CCE4F7;
+	color: #024;
+}
+QPushButton:!enabled {
+	border: 1px solid #BFBFBF;
+	background-color: #CCCCCC;
+	color: #888888;
+}</string>
+       </property>
+       <property name="text">
+        <string>校对</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QListWidget" name="listWidget">
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QScrollBar{width:8px;}
+QScrollBar:sub-line:vertical {height: 0px;}
+QScrollBar:add-line:vertical {height: 0px;}
+QScrollBar:vertical { 
+        padding-top:0px;
+        padding-bottom:0px;    
+        padding-left:0px;    
+        padding-right:0px;    
+        border-left:0px solid #dddddd;
+}
+QScrollBar::handle:vertical {
+        background:#cccccc;
+        min-height:30px;
+        border-radius:3px;
+}
+QScrollBar::handle:vertical:hover {
+        background:#999999;
+}
+QListWidget::Item{
+	height:18px;
+}</string>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="uniformItemSizes">
+      <bool>true</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>../data/test1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test7</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test8</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test9</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test10</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test11</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test12</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>../data/test13</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

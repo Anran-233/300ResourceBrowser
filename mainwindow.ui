@@ -12,8 +12,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1200</width>
-    <height>600</height>
+    <width>700</width>
+    <height>400</height>
    </size>
   </property>
   <property name="font">
@@ -32,7 +32,7 @@
    <string>300资源浏览器 简易版</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="res.qrc">
+   <iconset>
     <normaloff>:/ico_exe.ico</normaloff>:/ico_exe.ico</iconset>
   </property>
   <property name="styleSheet">
@@ -47,32 +47,60 @@
      <number>4</number>
     </property>
     <property name="leftMargin">
-     <number>6</number>
+     <number>4</number>
     </property>
     <property name="topMargin">
-     <number>6</number>
+     <number>4</number>
     </property>
     <property name="rightMargin">
-     <number>6</number>
+     <number>4</number>
     </property>
     <property name="bottomMargin">
-     <number>6</number>
+     <number>4</number>
     </property>
     <item>
      <widget class="QFrame" name="top">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>90</height>
-       </size>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	border: 1px solid #ADADAD;
+	background-color: #E1E2E2;
+	color: #444;
+}
+QPushButton:hover {
+	border: 1px solid #0078D7;
+	background-color: #E5F1FB;
+	color: #024;
+}
+QPushButton:pressed {
+	border: 1px solid #00559B;
+	background-color: #CCE4F7;
+	color: #024;
+}
+QPushButton:!enabled {
+	border: 1px solid #BFBFBF;
+	background-color: #CCCCCC;
+	color: #888888;
+}
+QSpinBox::up-button,QSpinBox::down-button {
+	width:0px;
+}
+QSpinBox {
+	border:1px solid #797979;
+	background-color: #FFFFFF;
+}
+QSpinBox:hover {
+	border: 1px solid #171717;
+	background-color: #FFFFFF;
+}
+QSpinBox:!enabled {
+	border: 1px solid #CCCCCC;
+	background-color: #F0F0F0;
+}</string>
       </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>90</height>
-       </size>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,1">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2,1">
+       <property name="spacing">
+        <number>4</number>
+       </property>
        <property name="leftMargin">
         <number>0</number>
        </property>
@@ -89,14 +117,8 @@
         <widget class="QFrame" name="info">
          <property name="minimumSize">
           <size>
-           <width>500</width>
+           <width>320</width>
            <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>500</width>
-           <height>16777215</height>
           </size>
          </property>
          <property name="styleSheet">
@@ -106,22 +128,25 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <property name="spacing">
-           <number>2</number>
+           <number>4</number>
           </property>
           <property name="leftMargin">
-           <number>6</number>
+           <number>4</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>4</number>
           </property>
           <property name="rightMargin">
-           <number>6</number>
+           <number>4</number>
           </property>
           <property name="bottomMargin">
-           <number>0</number>
+           <number>4</number>
           </property>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1,0,0">
+            <property name="spacing">
+             <number>4</number>
+            </property>
             <item>
              <widget class="QLabel" name="label">
               <property name="text">
@@ -131,6 +156,12 @@
             </item>
             <item>
              <widget class="QLineEdit" name="line_filePath">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
               <property name="text">
                <string>afsgasgsagsag</string>
               </property>
@@ -143,8 +174,8 @@
              <widget class="QPushButton" name="Button_openFilePath">
               <property name="minimumSize">
                <size>
-                <width>25</width>
-                <height>0</height>
+                <width>24</width>
+                <height>24</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -165,8 +196,8 @@
              <widget class="QPushButton" name="Button_copyFilePath">
               <property name="minimumSize">
                <size>
-                <width>25</width>
-                <height>0</height>
+                <width>24</width>
+                <height>24</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -187,6 +218,9 @@
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1,0,0">
+            <property name="spacing">
+             <number>4</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_2">
               <property name="text">
@@ -196,6 +230,12 @@
             </item>
             <item>
              <widget class="QLineEdit" name="line_patchPath">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
               <property name="text">
                <string>..\data\txt.txt</string>
               </property>
@@ -208,8 +248,8 @@
              <widget class="QPushButton" name="Button_copyFileName">
               <property name="minimumSize">
                <size>
-                <width>25</width>
-                <height>0</height>
+                <width>24</width>
+                <height>24</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -230,8 +270,8 @@
              <widget class="QPushButton" name="Button_copyPatchPath">
               <property name="minimumSize">
                <size>
-                <width>25</width>
-                <height>0</height>
+                <width>24</width>
+                <height>24</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -252,6 +292,9 @@
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <property name="spacing">
+             <number>4</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_3">
               <property name="text">
@@ -261,6 +304,12 @@
             </item>
             <item>
              <widget class="QLineEdit" name="line_index">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
               <property name="text">
                <string>123</string>
               </property>
@@ -278,6 +327,12 @@
             </item>
             <item>
              <widget class="QLineEdit" name="line_compLen">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
               <property name="text">
                <string>5546</string>
               </property>
@@ -295,6 +350,12 @@
             </item>
             <item>
              <widget class="QLineEdit" name="line_fileLen">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
               <property name="text">
                <string>1383</string>
               </property>
@@ -312,14 +373,8 @@
         <widget class="QFrame" name="head">
          <property name="minimumSize">
           <size>
-           <width>500</width>
+           <width>200</width>
            <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>500</width>
-           <height>16777215</height>
           </size>
          </property>
          <property name="styleSheet">
@@ -329,64 +384,112 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0">
           <property name="spacing">
-           <number>2</number>
+           <number>4</number>
           </property>
           <property name="leftMargin">
-           <number>6</number>
+           <number>4</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>4</number>
           </property>
           <property name="rightMargin">
-           <number>6</number>
+           <number>4</number>
           </property>
           <property name="bottomMargin">
-           <number>0</number>
+           <number>4</number>
           </property>
           <item>
            <layout class="QGridLayout" name="gridLayout">
             <property name="spacing">
-             <number>2</number>
+             <number>4</number>
             </property>
             <item row="0" column="1">
              <widget class="QPushButton" name="Button_viewLocal">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>读取本地导出目录里的资源</string>
+              </property>
               <property name="text">
-               <string>浏览本地目录资源</string>
+               <string>本地目录</string>
               </property>
              </widget>
             </item>
             <item row="0" column="0">
              <widget class="QPushButton" name="Button_viewHero">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>读取游戏目录实际用到的资源</string>
+              </property>
               <property name="text">
-               <string>读取游戏目录资源</string>
+               <string>游戏目录</string>
               </property>
              </widget>
             </item>
             <item row="1" column="2">
              <widget class="QPushButton" name="Button_set">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
               <property name="text">
                <string>设置</string>
               </property>
              </widget>
             </item>
             <item row="0" column="2">
-             <widget class="QPushButton" name="Button_exportAll">
+             <widget class="QPushButton" name="Button_help">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
               <property name="text">
-               <string>全部导出</string>
+               <string>帮助</string>
               </property>
              </widget>
             </item>
             <item row="1" column="0">
              <widget class="QPushButton" name="Button_viewData">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>直接读取单个资源文件</string>
+              </property>
               <property name="text">
-               <string>读取单个data资源</string>
+               <string>单个文件</string>
               </property>
              </widget>
             </item>
             <item row="1" column="1">
              <widget class="QPushButton" name="Button_viewNet">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>读取服务器上最新资源列表</string>
+              </property>
               <property name="text">
-               <string>浏览网络资源列表</string>
+               <string>网络列表</string>
               </property>
              </widget>
             </item>
@@ -396,6 +499,15 @@
            <layout class="QHBoxLayout" name="lookup">
             <item>
              <widget class="QLineEdit" name="line_lookup">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>查找内容至少两个字符</string>
+              </property>
               <property name="maxLength">
                <number>200</number>
               </property>
@@ -403,6 +515,15 @@
             </item>
             <item>
              <widget class="QPushButton" name="Button_lookup">
+              <property name="minimumSize">
+               <size>
+                <width>48</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>查找空内容则还原显示所有项</string>
+              </property>
               <property name="text">
                <string>查找</string>
               </property>
@@ -410,6 +531,12 @@
             </item>
             <item>
              <widget class="QPushButton" name="Button_clear">
+              <property name="minimumSize">
+               <size>
+                <width>48</width>
+                <height>24</height>
+               </size>
+              </property>
               <property name="text">
                <string>清除</string>
               </property>
@@ -424,7 +551,7 @@
         <widget class="QLabel" name="logo">
          <property name="minimumSize">
           <size>
-           <width>100</width>
+           <width>130</width>
            <height>0</height>
           </size>
          </property>
@@ -444,7 +571,7 @@
           <string notr="true">border: 1px solid #bbb;</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16px; color:#2a2a2a;&quot;&gt;《300英雄》&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:24px; color:#2a2a2a;&quot;&gt;资源浏览器&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:13px; color:#3f3f3f;&quot;&gt;简易版 v0.4(3)&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10px; color:#4f4f4f;&quot;&gt;@Anran233&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16px; color:#2a2a2a;&quot;&gt;《300英雄》&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:24px; color:#2a2a2a;&quot;&gt;资源浏览器&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:13px; color:#3f3f3f;&quot;&gt;简易版 v0.5&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10px; color:#4f4f4f;&quot;&gt;@Anran233&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -550,7 +677,7 @@ background-color: #f9f9f9;
                  <string notr="true">color: #666;</string>
                 </property>
                 <property name="text">
-                 <string>版本 v0.4 主要更新内容：图片预览器优化速度和增加直读模式、文本文件可预览</string>
+                 <string>版本 v0.5 主要更新内容：视图优化; 预览dat和试听bank; 自动更新; 帮助文档</string>
                 </property>
                </widget>
               </item>
@@ -637,6 +764,9 @@ QPushButton:!enabled {
               </property>
               <item>
                <widget class="QTextBrowser" name="textBrowser_log">
+                <property name="focusPolicy">
+                 <enum>Qt::ClickFocus</enum>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">QScrollBar{width:5px;}
 QScrollBar:sub-line:vertical {height: 0px;}
@@ -677,6 +807,25 @@ QListWidget::Item{
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'微软雅黑'; font-size:12px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24px; color:#333333;&quot;&gt;版本 v0.5  更新内容&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8px; color:#333333;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【重写】项目删了重写代码，重新梳理了处理逻辑&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【修复】下载网络文件失败的问题(变成1kb文件)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【修复】修复了高dpi显示器字体大小异常问题&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【优化】修改了网络文件下载逻辑，现在gz压缩包会直接下载到内存中进行解压，不再走磁盘读写(优化速度)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【优化】读取游戏目录资源界面可以显示更多的视图，并且可以自行设置每行显示个数和折叠空视图&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【优化】修改了视图的渲染逻辑，现在渲染多个视图更快，性能开销更低&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】导出模式新增了快速更新和完整更新模式，导出前先比对文件是否相同再决定是否要导出&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】右键菜单增加了bank语音文件的试听功能，在试听面板里可以自行导出语音资源&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】右键菜单增加了dat数据库文件的预览功能(只读)，提供了基础的查找功能&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】增加了快捷键 (查找Ctrl+F) (启用/禁用预览器Ctrl+I)(更多查看帮助)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】现在可以在设置里关联更多的文件类型了 (.jmp .bank .dat)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】添加自动更新(默认每月一次，可在设置里调整频率和关闭)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】略缩图预览器现在可以选择大中小三挡预设尺寸&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】添加资源整理功能&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【新增】添加帮助文档&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#666666;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#666666;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24px; color:#333333;&quot;&gt;版本 v0.4  更新内容&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8px; color:#333333;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【修复】TY的JMP数据包内部新增了无压缩的文件，导致原本用zlib压缩处理会出现卡死bug，现已修复&lt;/span&gt;&lt;/p&gt;
@@ -740,7 +889,7 @@ p, li { white-space: pre-wrap; }
   <tabstop>Button_viewData</tabstop>
   <tabstop>Button_viewLocal</tabstop>
   <tabstop>Button_viewNet</tabstop>
-  <tabstop>Button_exportAll</tabstop>
+  <tabstop>Button_help</tabstop>
   <tabstop>Button_set</tabstop>
   <tabstop>line_lookup</tabstop>
   <tabstop>Button_lookup</tabstop>
@@ -751,8 +900,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>line_compLen</tabstop>
   <tabstop>line_fileLen</tabstop>
  </tabstops>
- <resources>
-  <include location="res.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form_bank</class>
+ <widget class="QWidget" name="Form_bank">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::ClickFocus</enum>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/icon/ico_exe.ico</normaloff>:/icon/ico_exe.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Dialog_bank{
+	background-color: #EEE;
+}
+*{font: 12px &quot;微软雅黑&quot;;}
+QScrollBar{width:10px;}
+QScrollBar:sub-line:vertical {height: 0px;}
+QScrollBar:add-line:vertical {height: 0px;}
+QScrollBar:vertical { 
+        padding-top:0px;
+        padding-bottom:0px;    
+        padding-left:0px;    
+        padding-right:0px;    
+        border-left:0px solid #dddddd;
+}
+QScrollBar::handle:vertical {
+        background:#cccccc;
+        min-height:30px;
+        border-radius:4px;
+}
+QScrollBar::handle:vertical:hover {
+        background:#999999;
+}
+QListWidget{
+	font-size: 16px;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>4</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 1px solid #ADADAD;
+	background-color: #E1E2E2;
+	color: #444;
+}
+QPushButton:hover {
+	border: 1px solid #0078D7;
+	background-color: #E5F1FB;
+	color: #024;
+}
+QPushButton:pressed {
+	border: 1px solid #00559B;
+	background-color: #CCE4F7;
+	color: #024;
+}
+QPushButton:!enabled {
+	border: 1px solid #BFBFBF;
+	background-color: #CCCCCC;
+	color: #888888;
+}
+QSpinBox::up-button,QSpinBox::down-button {
+	width:0px;
+}
+QSpinBox {
+	border:1px solid #797979;
+	background-color: #FFFFFF;
+}
+QSpinBox:hover {
+	border: 1px solid #171717;
+	background-color: #FFFFFF;
+}
+QSpinBox:!enabled {
+	border: 1px solid #CCCCCC;
+	background-color: #F0F0F0;
+}
+</string>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="leftMargin">
+       <number>4</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="button_stop">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>停止播放</string>
+        </property>
+        <property name="autoDefault">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="button_play">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>播放选中项</string>
+        </property>
+        <property name="autoDefault">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="button_out">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>导出选中项</string>
+        </property>
+        <property name="autoDefault">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spinBox">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="prefix">
+         <string>音量: </string>
+        </property>
+        <property name="maximum">
+         <number>200</number>
+        </property>
+        <property name="value">
+         <number>100</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="button_set">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>确定</string>
+        </property>
+        <property name="autoDefault">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QListWidget" name="listWidget">
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>测试长度测试长度测试长度测试长度测试长度测试长度测试长度测试长度</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>button_stop</tabstop>
+  <tabstop>button_play</tabstop>
+  <tabstop>button_out</tabstop>
+  <tabstop>spinBox</tabstop>
+  <tabstop>button_set</tabstop>
+  <tabstop>listWidget</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

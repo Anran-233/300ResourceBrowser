@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file alias="qt_zh_CN.qm">res/qt_zh_CN.qm</file>
-        <file alias="ico_exe.ico">res/ico_exe.ico</file>
-        <file alias="ico_jmpFile.ico">res/ico_jmpFile.ico</file>
-        <file alias="300ResourceBrowser.zip">res/300ResourceBrowser.zip</file>
-    </qresource>
-</RCC>

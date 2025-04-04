@@ -1,5 +1,4 @@
 QT       += core gui
-QT       += concurrent
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,46 +15,50 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+INCLUDEPATH += \
+    $${PWD}/define \
+    $${PWD}/form 
+
 SOURCES += \
-    cpatch.cpp \
-    dialog_preview.cpp \
-    dialog_progress.cpp \
-    dialog_set.cpp \
-    dialog_tip.cpp \
-    form_reader.cpp \
+    define/config.cpp \
+    define/cpatch.cpp \
+    define/tool.cpp \
+	form/data_item.cpp \
+	form/data_main.cpp \
+    form/dialog_set.cpp \
+    form/form_bank.cpp \
+    form/form_dat.cpp \
+	form/form_image.cpp \
+    form/form_reader.cpp \
+	form/loading.cpp \
     main.cpp \
-    mainwindow.cpp \
-    widget_data.cpp \
-    widget_hero.cpp \
-    widget_local.cpp \
-    widget_net.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    ceventfilter.h \
-    cpatch.h \
-    dialog_preview.h \
-    dialog_progress.h \
-    dialog_set.h \
-    dialog_tip.h \
-    form_reader.h \
-    img_decode.h \
-    mainwindow.h \
-    widget_data.h \
-    widget_hero.h \
-    widget_local.h \
-    widget_net.h
+    define/config.h \
+    define/cpatch.h \
+	define/img_decode.h \
+    define/tool.h \
+	form/data_item.h \
+	form/data_main.h \
+    form/dialog_set.h \
+    form/form_bank.h \
+    form/form_dat.h \
+	form/form_image.h \
+    form/form_reader.h \
+	form/loading.h \
+    mainwindow.h
 
 FORMS += \
-    dialog_preview.ui \
-    dialog_progress.ui \
-    dialog_set.ui \
-    dialog_tip.ui \
-    form_reader.ui \
-    mainwindow.ui \
-    widget_data.ui \
-    widget_hero.ui \
-    widget_local.ui \
-    widget_net.ui
+	form/data_item.ui \
+	form/data_main.ui \
+    form/dialog_set.ui \
+    form/form_bank.ui \
+    form/form_dat.ui \
+	form/form_image.ui \
+    form/form_reader.ui \
+	form/loading.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -63,9 +66,25 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    res.qrc
+    resource.qrc
 
-DISTFILES += \
-    300ResourceBrowser.rc
+# 鐗堟湰淇℃伅
+VERSION = 1.0.5.0
+DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
+# 鏂囦欢鍥炬爣
+RC_ICONS += \
+    ico_exe.ico \
+    ico_jmp.ico \
+    ico_bank.ico \
+    ico_dat.ico
+# 鍏徃鍚嶇О
+QMAKE_TARGET_COMPANY = "Anran233有限可爱公司"
+# 浜у搧鍚嶇О
+QMAKE_TARGET_PRODUCT = "300英雄 资源浏览器 简易版"
+# 鏂囦欢璇存槑
+QMAKE_TARGET_DESCRIPTION = "《300英雄》游戏资源的快速浏览和导出等"
+# 鐗堟潈淇℃伅
+QMAKE_TARGET_COPYRIGHT = "Copyright (C) 2021-2023 Anran233."
+# 涓枃锛堢畝浣擄級
+RC_LANG = 0x0004
 
-RC_FILE += 300ResourceBrowser.rc

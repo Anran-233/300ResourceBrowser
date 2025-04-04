@@ -1,22 +1,15 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "widget_hero.h"
-#include "widget_data.h"
-#include "widget_local.h"
-#include "widget_net.h"
-#include "dialog_set.h"
-#include "cpatch.h"
-#include "dialog_tip.h"
-#include "form_reader.h"
-
 #include <QMainWindow>
-#include <QDebug>
+#include "cpatch.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+class CTip;
+class Data_main;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -24,33 +17,31 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    static MainWindow* Instance();
+    void start();
+    void start(const QString& strJmpFile);
+    void start(int update, const QString& value);
 
-    QString m_strAppPath;           // Windows应用程序完整路径
-    Widget_Hero m_wHero;            // 1.读取游戏目录资源
-    Widget_Data m_wData;            // 2.读取单个data资源
-    Widget_Local m_wLocal;          // 3.读取本地目录资源
-    Widget_Net m_wNet;              // 4.浏览网络资源列表
+signals:
+    void started();
+    void sigResize(const QSize& size);
 
-    void Init();
-    void OpenData(QString strDataPath);
+public slots:
+    void tip(const QString& strTip, int nTimeout = 1000);
+    void updateInfo(const SDataInfo& sDataInfo);
 
 private:
+    static MainWindow* m_pClass;
     Ui::MainWindow *ui;
+    CTip* m_tip = nullptr;
+    Data_main* m_datamain = nullptr;
 
-    Dialog_Tip *m_pTip = NULL;
-
-    void InitUI();
-    void UpdateInfo(SDataInfo sDataInfo);
-    void ReadEventFilter(int nEvent);
-    void UpdateTip(QString strTip, int nTimeMS = 1000);
-    virtual void resizeEvent(QResizeEvent *) override;
-
-private slots:
-    void on_Button_set_clicked();
-    void on_Button_exportAll_clicked();
-    void on_Button_lookup_clicked();
-    void on_Button_clear_clicked();
-    void on_logo_customContextMenuRequested(const QPoint &pos);
-    void on_Button_log_clicked();
+    void init();
+    void initUI();
+    void checkUpdate();
+    void readResource(int mode);
+    virtual void resizeEvent(QResizeEvent *event) override;
+    virtual bool eventFilter(QObject *obj, QEvent *event) override;
 };
+
 #endif // MAINWINDOW_H

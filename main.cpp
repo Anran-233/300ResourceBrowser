@@ -1,59 +1,93 @@
 ﻿#include "mainwindow.h"
-#include "dialog_set.h"
-
-#include "windows.h"
+#include "cpatch.h"
+#include "config.h"
+#include "form_bank.h"
+#include "form_dat.h"
 #include <QApplication>
+#include <QDebug>
 #include <QDir>
 #include <QTranslator>
+#include <QMainWindow>
+#include <windows.h>
 
-void InitConfig(MainWindow* w, QString strAppPath);
+void Init();
 
 int main(int argc, char *argv[])
 {
-    // 设置工作路径为程序所在目录
-    QDir::setCurrent(QString::fromLocal8Bit(argv[0]).left(QString::fromLocal8Bit(argv[0]).lastIndexOf('\\')));
+    // app
     QApplication a(argc, argv);
     QTranslator translator;
-    translator.load(":/qt_zh_CN.qm");
+    translator.load(":/qtbase_zh_CN.qm");
     a.installTranslator(&translator);
-    MainWindow w;
-    InitConfig(&w, QString::fromLocal8Bit(argv[0]));
-    if (argc > 1)
-    {
-        QString strDataPath(QString::fromLocal8Bit(argv[1]));
-        if (strDataPath.right(4) == ".jmp")
-            w.OpenData(strDataPath);
+    Init();
+
+    // 解析传入参数
+    int update = 0; // 0.null 1.更新成功 -1.更新失败
+    QString updateInfo("000");
+    int format = 0; // 0.null 1.jmp 2.bank 3.dat
+    SDataInfo data;
+    if (argc > 1) {
+        const QString& arg1 = QString::fromLocal8Bit(argv[1]);
+        if (arg1.size() == 0);
+        else if (arg1[0] == '-') {
+            if (arg1 == "-update") { // 更新结果
+                if (argc > 2) update = QString(argv[2]).toInt();
+                if (argc > 3) updateInfo = argv[3];
+            }
+        }
+        else {
+            data.filePath = QString(arg1).replace('\\', '/');
+            const int& nPos = data.filePath.lastIndexOf('.');
+            if (nPos >= 0) { // 判断类型
+                const QString& strFormat = data.filePath.mid(nPos);
+                if      (strFormat == ".jmp")   format = 1;
+                else if (strFormat == ".bank")  format = 2;
+                else if (strFormat == ".dat")   format = 3;
+            }
+            if (format) {
+                data.type = 2;
+                data.patchPath = data.filePath.split('/').back();
+            }
+        }
     }
-    return a.exec();
+
+    // 更新重启
+    if (update) {
+        (new MainWindow)->start(update, updateInfo);
+        return a.exec();
+    }
+    // 打开主界面
+    else if (format == 0) {
+        (new MainWindow)->start();
+        return a.exec();
+    }
+    // 打开jmp
+    else if (format == 1) {
+        (new MainWindow)->start(data.filePath);
+        return a.exec();
+    }
+    // 打开bank
+    else if (format == 2) {
+        (new Form_bank)->load(nullptr, data);
+        return a.exec();
+    }
+    // 打开dat
+    else if (format == 3) {
+        (new Form_dat)->load(nullptr, data);
+        return a.exec();
+    }
+    else return -1;
 }
 
 // 初始化配置
-void InitConfig(MainWindow* w, QString strAppPath)
+void Init()
 {
-    w->m_strAppPath = strAppPath;
-    w->show();
-    w->Init();
-
-    QDir isDir;
-    if (!isDir.exists("BConfig")) isDir.mkdir("BConfig");
-    if (!isDir.exists("BConfig/Temp")) isDir.mkdir("BConfig/Temp");
-//    if (!isDir.exists("BExport")) isDir.mkdir("BExport");
-//    if (!isDir.exists("BAlone")) isDir.mkdir("BAlone");
-
-    QFile inFile;
-    if (!inFile.exists("BConfig/ico_jmpFile.ico")) QFile::copy(":/ico_jmpFile.ico", "BConfig/ico_jmpFile.ico");
-    if (!inFile.exists("BConfig/Config.ini"))
-    {
-        QString strCurrentPath(QDir::currentPath());
-        if (strCurrentPath.right(1) != "/") strCurrentPath.append("/");
-        WritePrivateProfileString(L"配置", L"游戏路径", L"", L"BConfig/Config.ini");
-        WritePrivateProfileString(L"配置", L"导出路径", QString(strCurrentPath).append("BExport").toStdWString().c_str(), L"BConfig/Config.ini");
-        WritePrivateProfileString(L"配置", L"单独导出", QString(strCurrentPath).append("BAlone").toStdWString().c_str(), L"BConfig/Config.ini");
-        WritePrivateProfileString(L"配置", L"导出模式", L"1", L"BConfig/Config.ini");
-        WritePrivateProfileString(L"配置", L"预览图片", L"1", L"BConfig/Config.ini");
-
-        Dialog_Set *pDSet = new Dialog_Set(strAppPath, w);
-        pDSet->setModal(true);
-        pDSet->show();
-    }
+    auto config = qApp->applicationDirPath() + "/BConfig";
+    if (!QDir(config).exists()) QDir().mkdir(config);
+    SetDllDirectoryW(config.toStdWString().c_str());
+    auto resource = [](const QString &qrc, const QString & file){ if (!QFile::exists(file)) Zlib::UncompGz(qrc, file); };
+    resource(":/resource/readBank.dll.gz",  config + "/readBank.dll");
+    resource(":/resource/fmod.dll.gz",      config + "/fmod.dll");
+    resource(":/resource/update.exe.gz",    config + "/update.exe");
+    resource(":/resource/help.html.gz",     config + "/help.html");
 }

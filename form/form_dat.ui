@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form_dat</class>
+ <widget class="QWidget" name="Form_dat">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>200</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/ico_exe.ico</normaloff>:/ico_exe.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Dialog_bank{
+	background-color: #EEE;
+}
+*{font: 12px &quot;微软雅黑&quot;;}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
+   <property name="spacing">
+    <number>2</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>2</number>
+     </property>
+     <property name="leftMargin">
+      <number>2</number>
+     </property>
+     <property name="rightMargin">
+      <number>2</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>正在加载数据：996 / 114514 行</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_void">
+       <property name="minimumSize">
+        <size>
+         <width>60</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: 1px solid #ADADAD;
+	background-color: #E1E2E2;
+	color: #444;
+}
+QPushButton:hover {
+	border: 1px solid #0078D7;
+	background-color: #E5F1FB;
+	color: #024;
+}
+QPushButton:pressed {
+	border: 1px solid #00559B;
+	background-color: #CCE4F7;
+	color: #024;
+}
+QPushButton:!enabled {
+	border: 1px solid #BFBFBF;
+	background-color: #CCCCCC;
+	color: #888888;
+}</string>
+       </property>
+       <property name="text">
+        <string>隐藏空列</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_lookup">
+       <property name="minimumSize">
+        <size>
+         <width>60</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>60</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: 1px solid #ADADAD;
+	background-color: #E1E2E2;
+	color: #444;
+}
+QPushButton:hover {
+	border: 1px solid #0078D7;
+	background-color: #E5F1FB;
+	color: #024;
+}
+QPushButton:pressed {
+	border: 1px solid #00559B;
+	background-color: #CCE4F7;
+	color: #024;
+}
+QPushButton:!enabled {
+	border: 1px solid #BFBFBF;
+	background-color: #CCCCCC;
+	color: #888888;
+}</string>
+       </property>
+       <property name="text">
+        <string>查找</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="toolTip">
+      <string>双击复制选中项</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableWidget::item:selected{ 
+	color: #fff;
+	background-color: #08c;
+}
+QScrollBar{width:11px;height:11px;}
+QScrollBar:sub-line:vertical {height: 0px;}
+QScrollBar:add-line:vertical {height: 0px;}
+QScrollBar:sub-line:horizontal{width: 0px;}
+QScrollBar:add-line:horizontal{width: 0px;}
+QScrollBar:vertical { 
+        padding-top:0px;
+        padding-bottom:0px;    
+        padding-left:0px;    
+        padding-right:0px;    
+        border-left:0px solid #dddddd;
+}
+QScrollBar::handle:vertical {
+        background:#cccccc;
+        min-height:30px;
+        border-radius:4px;
+}
+QScrollBar::handle:vertical:hover {
+        background:#999999;
+}
+QScrollBar:horizontal { 
+        padding-top:0px;
+        padding-bottom:0px;    
+        padding-left:0px;    
+        padding-right:0px;    
+        border-left:0px solid #dddddd;
+}
+QScrollBar::handle:horizontal {
+        background:#cccccc;
+        min-width:30px;
+        border-radius:4px;
+}
+QScrollBar::handle:horizontal:hover {
+        background:#999999;
+}</string>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <row>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>7</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>9</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>10</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>11</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>12</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>13</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>1.整数</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>2.整数测试测试测试测试测试测试</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>3.浮点</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>4.整数</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>5.字符</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>6.浮点</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>7.整数</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>8.整数</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>9.整数</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>10.整数</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>11.整数</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>12.整数</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>13.整数</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>22222</string>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item row="4" column="3">
+      <property name="text">
+       <string>测试测试测试测试测试测试测试测试</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>button_lookup</tabstop>
+  <tabstop>button_void</tabstop>
+  <tabstop>tableWidget</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
