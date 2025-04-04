@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     // app
     QApplication a(argc, argv);
     QTranslator translator;
-    translator.load(":/qtbase_zh_CN.qm");
+    translator.load(":/resource/qtbase_zh_CN.qm");
     a.installTranslator(&translator);
     Init();
 
