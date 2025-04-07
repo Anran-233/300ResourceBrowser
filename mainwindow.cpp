@@ -50,9 +50,12 @@ void MainWindow::start()
 // 启动主界面(打开jmp文件)
 void MainWindow::start(const QString &strJmpFile)
 {
-    if (!QFile().exists(strJmpFile)) {
-
+    show();
+    if (QFileInfo(strJmpFile).exists()) {
+        readResource(2, strJmpFile);
+        tip(u8"欢迎使用 300资源浏览器 简易版！", 3000);
     }
+    else tip(QString(u8"无法打开文件：%1").arg(strJmpFile), 5000);
 }
 
 // 启动主界面(更新重启)
@@ -209,7 +212,7 @@ void MainWindow::checkUpdate()
 }
 
 // 读取资源
-void MainWindow::readResource(int mode)
+void MainWindow::readResource(int mode, QString strJmpPath)
 {
     // 1.读取游戏目录资源时检查目录内是否有数据包
     QStringList gameJmpFiles;
@@ -222,8 +225,7 @@ void MainWindow::readResource(int mode)
     }
 
     // 2.读取单个data数据时弹出文件选择对话框
-    QString strJmpPath;
-    if (mode == 2) {
+    if (mode == 2 && strJmpPath.isEmpty()) {
         strJmpPath = QFileDialog::getOpenFileName(this, u8"请选择要读取的数据包", nullptr, "JMP File(*.jmp)");
         if (strJmpPath.isEmpty()) return;
     }

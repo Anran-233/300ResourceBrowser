@@ -9,6 +9,7 @@
 
 #include <QCryptographicHash>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QMessageBox>
 #include <QProcess>
 #include <QTimer>
@@ -704,6 +705,8 @@ void Data_main::importData(QString path, const QVector<SDataInfoList *> &datas)
                     }
                     else out.file->write("DATA" + QByteArray::number(i + 1) + ".0");
                     // 导入资源
+                    QElapsedTimer t;
+                    t.start();
                     for (auto &item : items) {
                         if (isStop(error)) return;
                         // 读取数据
@@ -776,11 +779,12 @@ void Data_main::importData(QString path, const QVector<SDataInfoList *> &datas)
             else QMessageBox::critical(this, u8"错误", u8"无法添加资源！");
             qLoading->stop();
         }
-        else { // 成功
+        else if (r.success || r.discard) { // 成功
             QMessageBox::information(this, u8"提示", QString(u8"成功：%1  废弃：%2").arg(r.success).arg(r.discard));
             if (m_mode == 1 || m_mode == 2) reload(r.count); // 重新加载视图
             else qLoading->stop();
         }
+        else qLoading->stop(); // 取消操作
     });
     connect(qLoading, &Loading::cancel, qLoading->object, [=]{
         ActionScope([]{g_pause = true;},[]{g_pause = false;});

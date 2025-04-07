@@ -15,6 +15,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QCryptographicHash>
+#include <QProcess>
 
 /// 获取应用关联状态 (返回值: 0.未关联 1.已关联 2.已关联(其他程序)) (strClass 关联名, strExt 拓展名(.ext))
 int GetApplicationAssociation(const QString& strClass, const QString& strExt) {
@@ -95,6 +96,20 @@ void UpdateApplicationAssociation(const QString &value)
 
 /// 下载更新 (parent 父级窗口, progress 进度对话框, obj 下载信息, type 更新源, index 操作阶段)
 void DownloadUpdate(QWidget* parent, QProgressDialog* progress, const QJsonObject& obj, const int& type, int index) {
+    static const auto IsAppNameVersion = [](const QString &appName)->bool {
+        int pos = appName.lastIndexOf('v', -1, Qt::CaseInsensitive);
+        if (pos < 0) return false;
+        QString version = appName.mid(pos + 1, appName.size() - pos - 5);
+        if (version.isEmpty()) return false;
+        if (version.back() == u')') version = version.mid(0, version.length() - 1);
+        auto vs = version.split('(');
+        if (vs.size() > 2) return false;
+        if (vs.size() == 2) for (auto &c : vs[1]) if (c < u'0' || c >u'9') return false;
+        vs = vs[0].split('.');
+        if (vs.size() > 2) return false;
+        for (auto &v : vs) for (auto &c : v) if (c < u'0' || c >u'9') return false;
+        return true;
+    };
     // 1.检测本地是否有缓存更新文件
     if (index == 1) {
         progress->setLabelText(u8"检测本地缓存文件...");
@@ -102,8 +117,10 @@ void DownloadUpdate(QWidget* parent, QProgressDialog* progress, const QJsonObjec
         QObject::connect(thread, &CThread::started, thread, [=]{
             bool result = false;
             while (!result) {
-                if (QFileInfo().size() != obj["fileLen"].toInt(-1)) break;
-                QFile file("BConfig/300ResourceBrowser.exe");
+                QFileInfo fileInfo(qApp->applicationDirPath() + "/BConfig/300ResourceBrowser.exe");
+                if (!fileInfo.exists()) break;
+                if (fileInfo.size() != obj["fileLen"].toInt(-1)) break;
+                QFile file(fileInfo.filePath());
                 if (!file.open(QIODevice::ReadOnly)) break;
                 const QByteArray& md5 = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Md5).toHex();
                 file.close();
@@ -213,16 +230,16 @@ void DownloadUpdate(QWidget* parent, QProgressDialog* progress, const QJsonObjec
         const QString strDeletePath = qApp->applicationFilePath().replace('/', '\\');
         QString strDestPath = strDeletePath;
         QString strInfo("000");
-        while (QRegExp(R"(.*[vV]\d{1,2}\.\d{1,2}(\(\d{1,2}\))?)").exactMatch(QCoreApplication::applicationName())) {
+        QString strAppName = strDeletePath.split('\\').back();
+        if (IsAppNameVersion(strAppName)) {
             const QStringList& versions = QString(APP_VERSION).split('.');
-            if (versions.size() >= 4) break;
             strDestPath = QString("%1v%2.%3%4.exe")
                     .arg(strDeletePath.left(strDeletePath.lastIndexOf('v', -1, Qt::CaseInsensitive)),
                          versions[1], versions[2], versions[3] == "0" ? "" : ("(" + versions[3] + ")"));
             const QString strExts[3] {".jmp", ".bank", ".dat"}; // 确认文件关联是否需要更新
             for (int i = 0; i < 3; ++i) strInfo[i] = GetApplicationAssociation("300ResourceBrowser" + strExts[i], strExts[i]) == 1 ? '1' : '0';
         }
-        WinExec(QString("%1 \"%2\" \"%3\" \"%4\" %5").arg(strOpenPath, strSourcePath, strDeletePath, strDestPath, strInfo).toLocal8Bit(), SW_SHOWDEFAULT);
+        QProcess::startDetached(strOpenPath, QStringList() << strSourcePath << strDeletePath << strDestPath << strInfo);
         qApp->quit();
     }
     // -1.更新失败
@@ -235,9 +252,9 @@ void DownloadUpdate(QWidget* parent, QProgressDialog* progress, const QJsonObjec
 /// 获取下载信息 (parent 父级窗口, progress 进度对话框, type 更新源)
 void GetDownloadInfo(QWidget* parent, const int& type) {
     static const char* urls[3] = {
-        "http://gitee.com/anran_233/300ResourceBrowser/raw/main/update/download.json",  // 0.Gitee
-        "http://github.com/Anran-233/300ResourceBrowser/raw/main/update/download.json", // 1.Github
-        "http://Anran233.com/app/300hero/300ResourceBrowser/update/download.json"       // 2.备用服务器
+        "https://gitee.com/anran_233/300ResourceBrowser/raw/main/update/download.json",  // 0.Gitee
+        "https://github.com/Anran-233/300ResourceBrowser/raw/main/update/download.json", // 1.Github
+        "https://Anran233.com/app/300hero/300ResourceBrowser/update/download.json"       // 2.备用服务器
     };
     Http* http = new Http(parent);
     QProgressDialog* progress = new QProgressDialog(u8"正在获取下载信息...", nullptr, 0, 0, parent, Qt::Dialog | Qt::FramelessWindowHint);
@@ -268,7 +285,7 @@ void GetDownloadInfo(QWidget* parent, const int& type) {
 /// 检测更新 (parent 窗口指针, type 更新源, bSuccessMsg 成功是否弹窗)
 void CheckUpdate(QWidget* parent, const int& type, bool bSuccessMsg) {
     static const char* urls[3] = {
-        "http://gitee.com/anran_233/300ResourceBrowser/raw/main/update/version.txt",    // 0.Gitee
+        "https://gitee.com/anran_233/300ResourceBrowser/raw/main/update/version.txt",    // 0.Gitee
         "https://github.com/Anran-233/300ResourceBrowser/raw/main/update/version.txt",  // 1.Github
         "https://Anran233.com/app/300hero/300ResourceBrowser/update/version.txt"        // 2.备用服务器
     };

@@ -39,7 +39,7 @@ private:
     void init();
     void initUI();
     void checkUpdate();
-    void readResource(int mode);
+    void readResource(int mode, QString strJmpPath = {});
     virtual void resizeEvent(QResizeEvent *event) override;
     virtual bool eventFilter(QObject *obj, QEvent *event) override;
 };

@@ -133,7 +133,7 @@ void Data_item::load(QList<Data_item*> items)
                 if (m_stop) return;
                 if (!clientData.isEmpty()) clientData = Zlib::UncompGz((uchar*)clientData.data(), clientData.size());
                 if (m_stop) return;
-                if (asyncData.isEmpty()) asyncData = Zlib::UncompGz((uchar*)asyncData.data(), asyncData.size());
+                if (!asyncData.isEmpty()) asyncData = Zlib::UncompGz((uchar*)asyncData.data(), asyncData.size());
                 if (m_stop) return;
             }
             // 2.本地模式(游戏路径)

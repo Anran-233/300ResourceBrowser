@@ -404,7 +404,7 @@ CPatchResult Zlib::UncompGz(const uchar *sourceData, const ulong &sourceLen, QBy
         if (destLen != (ulong)destData.size()) destData.resize(destLen);
     }
     else { // 无压缩文件
-        destData = QByteArray((const char*)(sourceData + 4), destData.size() - 4);
+        destData = QByteArray((const char*)(sourceData + 4), sourceLen - 4);
     }
     return NoError;
 }

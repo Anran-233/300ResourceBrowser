@@ -82,7 +82,7 @@ QMAKE_TARGET_COMPANY = "Anran233有限可爱公司"
 # 浜у搧鍚嶇О
 QMAKE_TARGET_PRODUCT = "300英雄 资源浏览器 简易版"
 # 鏂囦欢璇存槑
-QMAKE_TARGET_DESCRIPTION = "《300英雄》游戏资源的快速浏览和导出等"
+QMAKE_TARGET_DESCRIPTION = "《300英雄》游戏资源浏览器"
 # 鐗堟潈淇℃伅
 QMAKE_TARGET_COPYRIGHT = "Copyright (C) 2021-2023 Anran233."
 # 涓枃锛堢畝浣擄級

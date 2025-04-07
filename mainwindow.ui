@@ -571,7 +571,7 @@ QSpinBox:!enabled {
           <string notr="true">border: 1px solid #bbb;</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16px; color:#2a2a2a;&quot;&gt;《300英雄》&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:24px; color:#2a2a2a;&quot;&gt;资源浏览器&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:13px; color:#3f3f3f;&quot;&gt;简易版 v0.5&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10px; color:#4f4f4f;&quot;&gt;@Anran233&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16px; color:#2a2a2a;&quot;&gt;《300英雄》&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:24px; color:#2a2a2a;&quot;&gt;资源浏览器&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:13px; color:#3f3f3f;&quot;&gt;简易版 v0.5(1)&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10px; color:#4f4f4f;&quot;&gt;@Anran233&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     int format = 0; // 0.null 1.jmp 2.bank 3.dat
     SDataInfo data;
     if (argc > 1) {
-        const QString& arg1 = QString::fromLocal8Bit(argv[1]);
+        const QString arg1 = QString::fromLocal8Bit(argv[1]);
         if (arg1.size() == 0);
         else if (arg1[0] == '-') {
             if (arg1 == "-update") { // 更新结果
@@ -37,14 +37,14 @@ int main(int argc, char *argv[])
         }
         else {
             data.filePath = QString(arg1).replace('\\', '/');
-            const int& nPos = data.filePath.lastIndexOf('.');
+            const int nPos = data.filePath.lastIndexOf('.');
             if (nPos >= 0) { // 判断类型
-                const QString& strFormat = data.filePath.mid(nPos);
+                const QString strFormat = data.filePath.mid(nPos);
                 if      (strFormat == ".jmp")   format = 1;
                 else if (strFormat == ".bank")  format = 2;
                 else if (strFormat == ".dat")   format = 3;
             }
-            if (format) {
+            if (format == 2 || format == 3) {
                 data.type = 2;
                 data.patchPath = data.filePath.split('/').back();
             }
