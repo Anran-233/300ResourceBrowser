@@ -571,7 +571,7 @@ QSpinBox:!enabled {
           <string notr="true">border: 1px solid #bbb;</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16px; color:#2a2a2a;&quot;&gt;《300英雄》&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:24px; color:#2a2a2a;&quot;&gt;资源浏览器&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:13px; color:#3f3f3f;&quot;&gt;简易版 v0.5(1)&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10px; color:#4f4f4f;&quot;&gt;@Anran233&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16px; color:#2a2a2a;&quot;&gt;《300英雄》&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:24px; color:#2a2a2a;&quot;&gt;资源浏览器&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:13px; color:#3f3f3f;&quot;&gt;简易版 v1.0&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10px; color:#4f4f4f;&quot;&gt;@Anran233&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -677,7 +677,7 @@ background-color: #f9f9f9;
                  <string notr="true">color: #666;</string>
                 </property>
                 <property name="text">
-                 <string>版本 v0.5 主要更新内容：视图优化; 预览dat和试听bank; 自动更新; 帮助文档</string>
+                 <string>版本 v1.0 主要更新内容：视图优化; 预览dat和试听bank; 自动更新; 帮助文档</string>
                 </property>
                </widget>
               </item>
@@ -807,8 +807,9 @@ QListWidget::Item{
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'微软雅黑'; font-size:12px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24px; color:#333333;&quot;&gt;版本 v0.5  更新内容&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24px; color:#333333;&quot;&gt;版本 v1.0  更新内容&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8px; color:#333333;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;(v0.5只是过渡版本，已更改为v1.0)&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【重写】项目删了重写代码，重新梳理了处理逻辑&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【修复】下载网络文件失败的问题(变成1kb文件)&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px; color:#666666;&quot;&gt;【修复】修复了高dpi显示器字体大小异常问题&lt;/span&gt;&lt;/p&gt;

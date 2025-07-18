@@ -31,7 +31,8 @@ MainWindow::~MainWindow()
 {
     delete ui;
     if (m_pClass == this) m_pClass = nullptr;
-    if (QDir().exists("BConfig/Temp")) QDir("BConfig/Temp").removeRecursively(); // 清理临时文件夹
+    auto tempPath = qApp->applicationDirPath() + "/BConfig/Temp";
+    if (QDir(tempPath).exists()) QDir(tempPath).removeRecursively(); // 清理临时文件夹
 }
 
 MainWindow *MainWindow::Instance()
@@ -129,7 +130,24 @@ void MainWindow::init()
     connect(ui->Button_viewNet,     &QPushButton::clicked, this, [=]{ readResource(4); });
 
     // 帮助按钮
-    connect(ui->Button_help, &QPushButton::clicked, this, [=]{ QDesktopServices::openUrl(QUrl("file:BConfig/help.html")); });
+    connect(ui->Button_help, &QPushButton::clicked, this, [=]{
+        auto appDir = qApp->applicationDirPath();
+        if (!QDir(appDir + "/BConfig/img").exists()) {
+            QDir().mkdir(appDir + "/BConfig/img");
+            QFile::copy(":/img/home.png", appDir + "/BConfig/img/home.png");
+            QFile::copy(":/img/mode1.png", appDir + "/BConfig/img/mode1.png");
+            QFile::copy(":/img/mode2.png", appDir + "/BConfig/img/mode2.png");
+            QFile::copy(":/img/mode3.png", appDir + "/BConfig/img/mode3.png");
+            QFile::copy(":/img/mode4.png", appDir + "/BConfig/img/mode4.png");
+            QFile::copy(":/img/preview1.png", appDir + "/BConfig/img/preview1.png");
+            QFile::copy(":/img/preview2.png", appDir + "/BConfig/img/preview2.png");
+            QFile::copy(":/img/preview3.png", appDir + "/BConfig/img/preview3.png");
+            QFile::copy(":/img/preview4.png", appDir + "/BConfig/img/preview4.png");
+            QFile::copy(":/img/preview5.png", appDir + "/BConfig/img/preview5.png");
+            QFile::copy(":/img/set1.png", appDir + "/BConfig/img/set1.png");
+        }
+        QDesktopServices::openUrl(QUrl("file:" + appDir + "/BConfig/help.html"));
+    });
 
     // 设置按钮
     connect(ui->Button_set, &QPushButton::clicked, this, [=]{ (new Dialog_Set(this))->show(); });

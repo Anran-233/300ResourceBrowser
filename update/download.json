@@ -1,12 +1,12 @@
 {
-	"version": "1.0.5.1",
-	"fileLen": 14294528,
-	"fileMd5": "c1cc7c331a01aa94f278c14e52eaf787",
-	"compLen": 7421959,
-	"compMd5": "1e663edf93d2e0e219b611c7c8b0de1d",
+	"version": "1.1.0.0",
+	"fileLen": 14334976,
+	"fileMd5": "f054b7e460d547e04bcf6b7d6eba5a7a",
+	"compLen": 7529438,
+	"compMd5": "e9be08ccd3a84d70c8f7fe02d3c4eb0a",
 	"url": [
-		"http://gitee.com/anran_233/300ResourceBrowser/releases/download/v0.5/300ResourceBrowser-v0.5.exe.gz",
-		"http://github.com/Anran-233/300ResourceBrowser/releases/download/v0.5/300ResourceBrowser-v0.5.exe.gz",
-		"http://Anran233.com/app/300hero/300ResourceBrowser/update/300ResourceBrowser-v0.5.exe.gz"
+		"http://gitee.com/anran_233/300ResourceBrowser/releases/download/v1.0/300ResourceBrowser-v1.0.exe.gz",
+		"http://github.com/Anran-233/300ResourceBrowser/releases/download/v1.0/300ResourceBrowser-v1.0.exe.gz",
+		"http://Anran233.com/app/300hero/300ResourceBrowser/update/300ResourceBrowser-v1.0.exe.gz"
 	]
 }

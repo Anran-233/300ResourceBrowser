@@ -69,7 +69,7 @@ RESOURCES += \
     resource.qrc
 
 # 版本信息
-VERSION = 1.0.5.0
+VERSION = 1.1.0.0
 DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
 # 文件图标
 RC_ICONS += \

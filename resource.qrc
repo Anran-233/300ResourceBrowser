@@ -13,4 +13,17 @@
         <file>ico_dat.ico</file>
         <file>loading.gif</file>
     </qresource>
+    <qresource prefix="/">
+        <file>img/home.png</file>
+        <file>img/mode1.png</file>
+        <file>img/mode2.png</file>
+        <file>img/mode3.png</file>
+        <file>img/mode4.png</file>
+        <file>img/preview1.png</file>
+        <file>img/preview2.png</file>
+        <file>img/preview3.png</file>
+        <file>img/preview4.png</file>
+        <file>img/preview5.png</file>
+        <file>img/set1.png</file>
+    </qresource>
 </RCC>
